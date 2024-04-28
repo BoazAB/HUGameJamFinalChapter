@@ -1,0 +1,19 @@
+public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health == 1)
+        {
+            hearts[2].SetActive(false);
+        }
+        if(health == 2)
+        {
+            hearts[1].SetActive(false);
+        }
+        if(health == 0)
+        {
+            gameObject.transform.localScale= new Vector3( 0.8f, 0.8f, 0.8f);
+            Destroy(hearts[2]);
+            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        }
+    }
