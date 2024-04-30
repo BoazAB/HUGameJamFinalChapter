@@ -1,17 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerClass : MonoBehaviour
 {
     public int health;
     [SerializeField] GameObject[] hearts;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(1);
-        }
-    }
     public void TakeDamage(int damage)
     {
 
@@ -29,6 +23,16 @@ public class PlayerClass : MonoBehaviour
         if (health == 0)
         {
             Destroy(hearts[0]);
+            SceneManager.LoadScene("Death");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            TakeDamage(1);
+            Destroy(other.gameObject);
         }
     }
 }
