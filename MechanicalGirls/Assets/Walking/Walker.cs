@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Walker : MonoBehaviour
 {
+    public bool isWalking;
     public WalkingBaseclass Walk1;
     public WalkingBaseclass Walk2;
     // Start is called before the first frame update
@@ -16,13 +17,11 @@ public class Walker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        WalkingBaseclass walkers = (Input.GetKeyDown(KeyCode.A)? Walk1 : (Input.GetKeyDown(KeyCode.D)? Walk2 : null));
+        if (walkers != null && isWalking == false)
         {
-            Walk1.Invoke();
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Walk2.Invoke();
+            walkers.Invoke();
+            isWalking = true;
         }
     }
 }

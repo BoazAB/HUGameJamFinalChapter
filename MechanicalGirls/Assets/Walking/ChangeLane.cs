@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChangeLane : WalkingBaseclass
 {
+    public Walker walker;
     public float laneDistance;
     public float walkSpeed;
     public bool walkRight = true; 
@@ -41,6 +42,7 @@ public class ChangeLane : WalkingBaseclass
         else
         {
             timer = 0;
+            walker.isWalking = false;
         }
     }
 

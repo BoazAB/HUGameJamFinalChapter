@@ -459,6 +459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eee6c0fbc3f74f4ba3ed8ee691b5cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walker: {fileID: 1345210129}
   laneDistance: 3
   walkSpeed: 1
   walkRight: 0
@@ -477,11 +478,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.21108082
       value: 0.5131482
-      inSlope: 1.3093268
-      outSlope: 1.3093268
+      inSlope: 0.5968426
+      outSlope: 0.5968426
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.68416524
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5210357
+      value: 0.5830951
+      inSlope: 0.38870305
+      outSlope: 0.38870305
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.49803704
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1.0066528
@@ -595,6 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eee6c0fbc3f74f4ba3ed8ee691b5cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walker: {fileID: 1345210129}
   laneDistance: 3
   walkSpeed: 1
   walkRight: 1
@@ -613,11 +624,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.21108082
       value: 0.5131482
-      inSlope: 1.3093268
-      outSlope: 1.3093268
+      inSlope: 0.5968426
+      outSlope: 0.5968426
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.68416524
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5210357
+      value: 0.5830951
+      inSlope: 0.38870305
+      outSlope: 0.38870305
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.49803704
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1.0066528
@@ -645,6 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a704265fc31cc94a9667af6908ffd8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWalking: 0
   Walk1: {fileID: 1345210123}
   Walk2: {fileID: 1345210128}
 --- !u!1 &1747732343
