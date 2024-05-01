@@ -32,7 +32,6 @@ public class ChangeLane : WalkingBaseclass
             transform.position = new Vector3(LocationAtTime.x + -(WalkSpeedCurve.Evaluate(timer) * laneDistance),transform.position.y,transform.position.z);
         }
         timer += Time.deltaTime * walkSpeed;
-        Debug.Log("KutError" + Time.deltaTime);
         if  (timer <= 1)
         {
 

@@ -1,14 +1,18 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class PlayerClass : MonoBehaviour
 {
+    public TextMeshProUGUI stopwatchText;
+    public InventoryHolder Inventory;
     public int health;
     [SerializeField] GameObject[] hearts;
 
     public void TakeDamage(int damage)
     {
-
         health -= damage;
 
         if (health == 1)
@@ -22,7 +26,10 @@ public class PlayerClass : MonoBehaviour
         }
         if (health == 0)
         {
+            Debug.Log(stopwatchText.text);
             Destroy(hearts[0]);
+            Inventory.Pickup("Highscore", stopwatchText.text);
+            Inventory.saveSystems.QuickSave();
             SceneManager.LoadScene("Death");
         }
     }
