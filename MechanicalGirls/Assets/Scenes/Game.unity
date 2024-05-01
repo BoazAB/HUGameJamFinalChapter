@@ -667,7 +667,8 @@ Transform:
   m_LocalPosition: {x: 2.55, y: 8.32, z: 14.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1748737796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 10.891, y: 0, z: 0}
 --- !u!65 &1354742321
@@ -718,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eee6c0fbc3f74f4ba3ed8ee691b5cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walker: {fileID: 0}
+  walker: {fileID: 1354742322}
   laneDistance: 3
   walkSpeed: 1
   walkRight: 1
@@ -778,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eee6c0fbc3f74f4ba3ed8ee691b5cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walker: {fileID: 0}
+  walker: {fileID: 1354742322}
   laneDistance: 3
   walkSpeed: 1
   walkRight: 0
@@ -998,12 +999,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748737791}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.72, y: 5.09, z: 21.06}
+  m_LocalRotation: {x: -0.094895214, y: 0, z: -0, w: 0.9954873}
+  m_LocalPosition: {x: 0.17000008, y: -1.9815428, z: 6.7967916}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1354742320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1748737797
 MonoBehaviour:
@@ -1834,6 +1835,5 @@ SceneRoots:
   - {fileID: 1727126942}
   - {fileID: 120993946}
   - {fileID: 5495125765053458240}
-  - {fileID: 1748737796}
   - {fileID: 139387878}
   - {fileID: 187404050}
