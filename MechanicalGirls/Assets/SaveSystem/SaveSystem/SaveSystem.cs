@@ -5,6 +5,7 @@ using System.IO;
 using UnityEditor;
 using System.Collections.Generic;
 using System.Globalization;
+using Unity.VisualScripting;
 
 [CreateAssetMenu]
 public class SaveSystems : ScriptableObject
@@ -35,12 +36,21 @@ public class SaveSystems : ScriptableObject
         }
 
     }
-    public void MakeAllFiles()
+    public IEnumerator<WaitForNextFrameUnit> MakeAllFiles()
     {
         for(int i = 0; i <= Inventory.ObtainableItems.Capacity; i++)
         {
             Debug.Log("Werkt");
-            MakeFiles(Inventory.ObtainableItems[i]);
+            //MakeFiles(Inventory.ObtainableItems[i]);
+        }
+        yield return new WaitForNextFrameUnit();
+        var FilePath = "/Amount" + "Amount" + ".txt";
+        using (var sr = new StreamWriter(Application.dataPath + FilePath, false)) {
+            Debug.Log("JapaneseCalendar");
+            for (int i = 1; i <= Inventory.ObtainableItems.Count; i++)
+            {
+                sr.WriteLine(0);
+            }
         }
     }
     public void ReadAllFiles()
@@ -89,7 +99,7 @@ public class SaveSystems : ScriptableObject
         Inventory.names.Clear();
         Inventory.Amounts.Clear();
     }
-    public void MakeFiles(string name)
+    public void MakeFiles()
     {
         Debug.Log("hiergekomen");
         var FilePath = "/Amount" + "Amount" + ".txt";

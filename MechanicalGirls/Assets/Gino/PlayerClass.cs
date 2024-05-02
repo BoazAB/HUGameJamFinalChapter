@@ -28,13 +28,14 @@ public class PlayerClass : MonoBehaviour
         if (health == 0)
         {
             Destroy(hearts[0]);
+            SceneManager.LoadScene("Death");
             if (Stopwatch.time > Inventory.saveSystems.ReadFiles("Amount"))
             {
+                SceneManager.LoadScene("Death");
                 Inventory.Pickup("Highscore", Stopwatch.time.ToString());
                 Inventory.saveSystems.QuickSave();
             }
 
-            SceneManager.LoadScene("Death");
         }
     }
 
