@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Walker : MonoBehaviour
 {
+    public int lane = 2;
     public bool isWalking;
     public WalkingBaseclass Walk1;
     public WalkingBaseclass Walk2;
@@ -20,8 +21,23 @@ public class Walker : MonoBehaviour
         WalkingBaseclass walkers = (Input.GetKeyDown(KeyCode.A)? Walk1 : (Input.GetKeyDown(KeyCode.D)? Walk2 : null));
         if (walkers != null && isWalking == false)
         {
-            walkers.Invoke();
-            isWalking = true;
+            if(walkers == Walk1){
+                if(lane > 1){
+                    lane --;
+                    Walk1.Invoke();
+                    isWalking = true;
+                }
+
+            }
+            else{
+                if(lane < 3){
+                    lane++;
+                    Walk2.Invoke();
+                    isWalking = true;
+                }
+
+            }
+
         }
     }
 }

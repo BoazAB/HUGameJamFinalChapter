@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Diagnostics;
 
 
 public class PlayerClass : MonoBehaviour
@@ -26,10 +27,13 @@ public class PlayerClass : MonoBehaviour
         }
         if (health == 0)
         {
-            Debug.Log(stopwatchText.text);
             Destroy(hearts[0]);
-            Inventory.Pickup("Highscore", stopwatchText.text);
-            Inventory.saveSystems.QuickSave();
+            if (Stopwatch.time > Inventory.saveSystems.ReadFiles("Amount"))
+            {
+                Inventory.Pickup("Highscore", Stopwatch.time.ToString());
+                Inventory.saveSystems.QuickSave();
+            }
+
             SceneManager.LoadScene("Death");
         }
     }

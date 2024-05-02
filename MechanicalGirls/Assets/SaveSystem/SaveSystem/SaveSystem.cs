@@ -47,7 +47,7 @@ public class SaveSystems : ScriptableObject
     {
         for(int i = 0; i <= Inventory.ObtainableItems.Capacity; i++)
         {
-            Debug.Log(ReadFiles("Amount", i));
+            //Debug.Log(ReadFiles("Amount", i));
 
         }
     }
@@ -110,14 +110,12 @@ public class SaveSystems : ScriptableObject
             
         }
     }
-    public int ReadFiles(string name, int line)
+    public float ReadFiles(string name)
     {
         var FilePath = "/Amount" + name + ".txt";
         //return int.Parse(File.ReadAllText(Application.dataPath + FilePath));
         using (var sr = new StreamReader(Application.dataPath + FilePath)) {
-            for (int i = 1; i < line; i++)
-                sr.ReadLine();
-            return int.Parse(sr.ReadLine());
+            return float.Parse(sr.ReadLine());
         }
 
     }
