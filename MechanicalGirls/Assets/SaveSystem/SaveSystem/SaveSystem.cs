@@ -77,6 +77,17 @@ public class SaveSystems : ScriptableObject
             }
         }
     }
+    public IEnumerator<WaitForNextFrameUnit> witeZero()
+    {
+        var FilePath = "/Amount" + "Amount" + ".txt";
+        yield return new WaitForNextFrameUnit();
+        using (var sr = new StreamWriter(Application.dataPath + FilePath, false)) {
+            Debug.Log("JapaneseCalendar");
+            sr.WriteLine("0");
+        }
+        yield return new WaitForNextFrameUnit();
+
+    }
     public void QuickSave()
     {
         for (int i = 1; i <= Inventory.ObtainableItems.Count; i++)
@@ -108,10 +119,11 @@ public class SaveSystems : ScriptableObject
         {
             //File.WriteAllLines(Application.dataPath + FilePath, "0");
             File.Create(Application.dataPath + FilePath);
+            witeZero();
         }
         else
         {
-            
+            LoadAmounts();
             //using (var sr = new StreamWriter(Application.dataPath + FilePath)) {
              //   for (int i = 1; i <= Inventory.ObtainableItems.Capacity; i++)
                //     sr.WriteLine("" + Inventory.ObtainableItems.Capacity);

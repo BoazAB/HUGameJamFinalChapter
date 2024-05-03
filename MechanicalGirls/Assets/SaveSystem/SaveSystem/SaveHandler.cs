@@ -10,7 +10,7 @@ public class SaveHandler : MonoBehaviour
     public InventoryHolder Inventory;
     void Start()
     {
-        StartCoroutine(saveSystems.MakeFiles);
+        saveSystems.MakeFiles();
         //saveSystems.ReadAllFiles();
         saveSystems.LoadAmounts();
     }
