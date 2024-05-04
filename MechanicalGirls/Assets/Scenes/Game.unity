@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a704265fc31cc94a9667af6908ffd8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lane: 2
   isWalking: 0
   Walk1: {fileID: 1354742324}
   Walk2: {fileID: 1354742323}
@@ -1084,6 +1085,7 @@ MonoBehaviour:
   - {fileID: 1297608479}
   - {fileID: 441669805}
   - {fileID: 942740959}
+  Duration: 1
 --- !u!33 &222276398268890245
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1867,6 +1869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb24c75cd3e85a40ad26c74878085af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spee: -1
 --- !u!33 &8424412098543367630
 MeshFilter:
   m_ObjectHideFlags: 0

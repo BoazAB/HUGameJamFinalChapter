@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System.Diagnostics;
+using System.Collections.Generic;
 
 
 public class PlayerClass : MonoBehaviour
@@ -11,11 +11,12 @@ public class PlayerClass : MonoBehaviour
     public InventoryHolder Inventory;
     public int health;
     [SerializeField] GameObject[] hearts;
-
+    public Stun stun;
+    public float Duration = 1;
     public void TakeDamage(int damage)
     {
         health -= damage;
-
+        StartCoroutine(StunMapAndPlayer());
         if (health == 1)
         {
             hearts[1].SetActive(false);
@@ -45,6 +46,19 @@ public class PlayerClass : MonoBehaviour
         {
             TakeDamage(1);
             Destroy(other.gameObject);
+        }
+    }
+    public IEnumerator<WaitForSeconds> StunMapAndPlayer()
+    {
+        for (int i = 0; i < Stun.hoi.MapMoves.Count;){
+            Stun.hoi.MapMoves[i].spee = 0;
+            Debug.Log("MapMoves" + Stun.hoi.MapMoves[i]);
+            i++;
+        }
+        yield return new WaitForSeconds(Duration);
+        for (int i = 0; i< Stun.hoi.MapMoves.Count;){
+            Stun.hoi.MapMoves[i].spee = -1;
+            i++;
         }
     }
 }
