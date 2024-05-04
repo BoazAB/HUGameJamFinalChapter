@@ -25,5 +25,21 @@ public class Stun
     public void Activate(){
         //StartCoroutine(StunMapAndPlayer());
     }
+    public void stunMapsAndPlayer(Walker walker){
+        for (int i = 0; i < Stun.hoi.MapMoves.Count;){
+            Stun.hoi.MapMoves[i].spee = 0;
+            Debug.Log("MapMoves" + Stun.hoi.MapMoves[i]);
+            i++;
+        }
+        walker.Stunned = true;
+    }
+    public void unStunMapsAndPlayer(Walker walker){
+        for (int i = 0; i < Stun.hoi.MapMoves.Count;){
+            Stun.hoi.MapMoves[i].spee = -1;
+            Debug.Log("MapMoves" + Stun.hoi.MapMoves[i]);
+            i++;
+        }
+        walker.Stunned = false;
 
+    }
 }

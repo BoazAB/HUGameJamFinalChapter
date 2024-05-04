@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a704265fc31cc94a9667af6908ffd8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stunned: 0
   lane: 2
   isWalking: 0
   Walk1: {fileID: 1354742324}
@@ -1078,6 +1079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a669c4d4efbe44f869f76c39a86476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walker: {fileID: 1354742322}
   stopwatchText: {fileID: 2849935681210502580}
   Inventory: {fileID: 11400000, guid: 32381505d8beb104d9ff6537f6d8d182, type: 2}
   health: 3

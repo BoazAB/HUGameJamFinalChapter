@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 public class PlayerClass : MonoBehaviour
 {
+    public Walker walker;
     public TextMeshProUGUI stopwatchText;
     public InventoryHolder Inventory;
     public int health;
@@ -50,15 +51,10 @@ public class PlayerClass : MonoBehaviour
     }
     public IEnumerator<WaitForSeconds> StunMapAndPlayer()
     {
-        for (int i = 0; i < Stun.hoi.MapMoves.Count;){
-            Stun.hoi.MapMoves[i].spee = 0;
-            Debug.Log("MapMoves" + Stun.hoi.MapMoves[i]);
-            i++;
-        }
+        Stun.hoi.stunMapsAndPlayer(walker);
+
         yield return new WaitForSeconds(Duration);
-        for (int i = 0; i< Stun.hoi.MapMoves.Count;){
-            Stun.hoi.MapMoves[i].spee = -1;
-            i++;
-        }
+
+        Stun.hoi.unStunMapsAndPlayer(walker);
     }
 }
