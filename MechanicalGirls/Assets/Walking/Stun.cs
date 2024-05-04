@@ -20,26 +20,17 @@ public class Stun
         }
         return hoi;
     }
-
-    public float Duration;
-    public void Activate(){
-        //StartCoroutine(StunMapAndPlayer());
-    }
-    public void stunMapsAndPlayer(Walker walker){
-        for (int i = 0; i < Stun.hoi.MapMoves.Count;){
-            Stun.hoi.MapMoves[i].spee = 0;
-            Debug.Log("MapMoves" + Stun.hoi.MapMoves[i]);
-            i++;
-        }
+    public void stunMapsAndPlayer(Walker walker){     
         walker.Stunned = true;
+        ForLoop(0);
     }
     public void unStunMapsAndPlayer(Walker walker){
-        for (int i = 0; i < Stun.hoi.MapMoves.Count;){
-            Stun.hoi.MapMoves[i].spee = -1;
-            Debug.Log("MapMoves" + Stun.hoi.MapMoves[i]);
-            i++;
-        }
         walker.Stunned = false;
-
+        ForLoop(-1);
+    }
+    public void ForLoop(int speed){
+        for (int i = 0; i < Stun.hoi.MapMoves.Count; i ++){
+            Stun.hoi.MapMoves[i].spee = speed;
+        }
     }
 }
