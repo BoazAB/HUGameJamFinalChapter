@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Walker : MonoBehaviour
 {
+    public bool Stunned = false;
     public int lane = 2;
     public bool isWalking;
     public WalkingBaseclass Walk1;
@@ -19,7 +20,7 @@ public class Walker : MonoBehaviour
     void Update()
     {
         WalkingBaseclass walkers = (Input.GetKeyDown(KeyCode.A)? Walk1 : (Input.GetKeyDown(KeyCode.D)? Walk2 : null));
-        if (walkers != null && isWalking == false)
+        if (walkers != null && isWalking == false && Stunned == false)
         {
             if(walkers == Walk1){
                 if(lane > 1){

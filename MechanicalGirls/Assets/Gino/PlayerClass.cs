@@ -2,19 +2,25 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System.Diagnostics;
+using System.Collections.Generic;
 
 
 public class PlayerClass : MonoBehaviour
 {
+    public Walker walker;
     public TextMeshProUGUI stopwatchText;
     public InventoryHolder Inventory;
     public int health;
     [SerializeField] GameObject[] hearts;
-
-    public void TakeDamage(int damage)
+    public Stun stun;
+    public SaveHandler saveHandler;
+    public float Duration = 1;
+    public void TakeDamage(int damage, bool Stunned)
     {
         health -= damage;
+        if(Stunned == false){
+            StartCoroutine(StunMapAndPlayer());      
+        }
 
         if (health == 1)
         {
@@ -29,11 +35,10 @@ public class PlayerClass : MonoBehaviour
         {
             Destroy(hearts[0]);
             SceneManager.LoadScene("Death");
-            if (Stopwatch.time > Inventory.saveSystems.ReadFiles("Amount"))
+            if (Stopwatch.time > PlayerPrefs.GetFloat("highscore"))
             {
                 SceneManager.LoadScene("Death");
-                Inventory.Pickup("Highscore", Stopwatch.time.ToString());
-                Inventory.saveSystems.QuickSave();
+                PlayerPrefs.SetFloat("Time",Stopwatch.time);
             }
 
         }
@@ -43,8 +48,16 @@ public class PlayerClass : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            TakeDamage(1);
+            TakeDamage(1, false);
             Destroy(other.gameObject);
         }
+    }
+    public IEnumerator<WaitForSeconds> StunMapAndPlayer()
+    {
+        Stun.hoi.stunMapsAndPlayer(walker);
+
+        yield return new WaitForSeconds(Duration);
+
+        Stun.hoi.unStunMapsAndPlayer(walker);
     }
 }

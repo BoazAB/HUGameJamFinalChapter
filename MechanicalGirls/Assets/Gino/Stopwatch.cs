@@ -9,7 +9,10 @@ public class Stopwatch : MonoBehaviour
     public static float time = 0f;
     private bool isStopwatchRunning = true;
     [SerializeField] private TextMeshProUGUI stopwatchText;
-
+    void Start()
+    {
+        time = 0f;
+    }
     void Update()
     {
         if (isStopwatchRunning)
