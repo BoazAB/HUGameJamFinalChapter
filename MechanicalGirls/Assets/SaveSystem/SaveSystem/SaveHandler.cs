@@ -10,9 +10,22 @@ public class SaveHandler : MonoBehaviour
     public InventoryHolder Inventory;
     void Start()
     {
-        saveSystems.MakeFiles();
+        if (PlayerPrefs.HasKey("Time")){
+            Inventory.Inventory.Add("highscore", PlayerPrefs.GetFloat("Time").ToString());
+            Debug.Log("tijd" + PlayerPrefs.GetFloat("Time").ToString());
+        }
+        else{
+            PlayerPrefs.SetFloat("Time", 0);
+            Debug.Log("tijd" + PlayerPrefs.GetFloat("Time").ToString());
+
+        }
+        //saveSystems.MakeFiles();
         //saveSystems.ReadAllFiles();
-        saveSystems.LoadAmounts();
+        //saveSystems.LoadAmounts();
+
+    }
+    public void Save(float Amount){
+        PlayerPrefs.SetFloat("Time", Amount);
     }
     public IEnumerator<WaitForSeconds> AutoSave()
     {

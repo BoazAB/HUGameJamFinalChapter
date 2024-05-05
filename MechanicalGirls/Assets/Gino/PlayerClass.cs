@@ -13,11 +13,15 @@ public class PlayerClass : MonoBehaviour
     public int health;
     [SerializeField] GameObject[] hearts;
     public Stun stun;
+    public SaveHandler saveHandler;
     public float Duration = 1;
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool Stunned)
     {
         health -= damage;
-        StartCoroutine(StunMapAndPlayer());
+        if(Stunned == false){
+            StartCoroutine(StunMapAndPlayer());      
+        }
+
         if (health == 1)
         {
             hearts[1].SetActive(false);
@@ -31,11 +35,10 @@ public class PlayerClass : MonoBehaviour
         {
             Destroy(hearts[0]);
             SceneManager.LoadScene("Death");
-            if (Stopwatch.time > Inventory.saveSystems.ReadFiles("Amount"))
+            if (Stopwatch.time > PlayerPrefs.GetFloat("highscore"))
             {
                 SceneManager.LoadScene("Death");
-                Inventory.Pickup("Highscore", Stopwatch.time.ToString());
-                Inventory.saveSystems.QuickSave();
+                PlayerPrefs.SetFloat("Time",Stopwatch.time);
             }
 
         }
@@ -45,7 +48,7 @@ public class PlayerClass : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            TakeDamage(1);
+            TakeDamage(1, false);
             Destroy(other.gameObject);
         }
     }
