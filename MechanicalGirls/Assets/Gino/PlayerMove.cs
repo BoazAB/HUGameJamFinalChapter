@@ -2,37 +2,37 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-
-
     [SerializeField] public KeyCode moveLeft;
     [SerializeField] public KeyCode moveRight;
     [SerializeField] public KeyCode jumpKey;
 
 
     [SerializeField] private float moveSpeed;
-    private Rigidbody2D rb;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
-        Vector2 movement = Vector2.zero;
-
+        float horizontalInput = 0f;
         if (Input.GetKey(moveLeft))
         {
-            movement.x = (transform.right * Time.deltaTime * -moveSpeed).x;
+            horizontalInput = -1f;
+            Debug.Log("Left key pressed");
+
         }
         if (Input.GetKey(moveRight))
         {
-            movement.x = (transform.right * Time.deltaTime * moveSpeed).x;
+            horizontalInput = 1f;
+            Debug.Log("RIght key pressed");
 
         }
 
-        movement = movement + (Vector2)(transform.position);
+        // Calculate movement direction
+        Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * moveSpeed * Time.deltaTime;
 
-        rb.MovePosition(movement);
+        // Move the player sprite
+        gameObject.transform.Translate(movement);
     }
 
 }
