@@ -40,6 +40,6 @@ public class InventoryHolder : ScriptableObject
     public void startQuickSave()
     {
 
-        saveSystems.QuickSave();
+        //saveSystems.QuickSave();
     }
 }

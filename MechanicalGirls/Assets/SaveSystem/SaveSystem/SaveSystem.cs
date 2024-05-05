@@ -88,6 +88,7 @@ public class SaveSystems : ScriptableObject
         yield return new WaitForNextFrameUnit();
 
     }
+    /*
     public void QuickSave()
     {
         for (int i = 1; i <= Inventory.ObtainableItems.Count; i++)
@@ -110,6 +111,7 @@ public class SaveSystems : ScriptableObject
         Inventory.names.Clear();
         Inventory.Amounts.Clear();
     }
+    */
     public void MakeFiles()
     {
         Debug.Log("hiergekomen");
