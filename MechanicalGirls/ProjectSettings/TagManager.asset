@@ -7,6 +7,7 @@ TagManager:
   - Trigger
   - Wall
   - Obstacle
+  - counter
   layers:
   - Default
   - TransparentFX
