@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2e0a9a65e0f238e48a17208a5d81b04c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - coal: {fileID: 1972077651496700857, guid: b2331d6df8efc7543abb2eedcc28dd1b, type: 3}
+  - water: {fileID: 5052830255640344302, guid: d070ee85d68a9204a904479cfad92561, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,6 +8,14 @@ TagManager:
   - Wall
   - Obstacle
   - counter
+  - p1
+  - p2
+  - coalCrate
+  - waterCrate
+  - furnace
+  - cooling
+  - coal
+  - water
   layers:
   - Default
   - TransparentFX
