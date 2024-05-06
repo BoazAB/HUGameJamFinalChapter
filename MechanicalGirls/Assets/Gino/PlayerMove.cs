@@ -20,13 +20,11 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(moveLeft))
         {
             horizontalInput = -1f;
-            Debug.Log("Left key pressed");
 
         }
         else if (Input.GetKey(moveRight))
         {
             horizontalInput = 1f;
-            Debug.Log("RIght key pressed");
 
         }
         else
