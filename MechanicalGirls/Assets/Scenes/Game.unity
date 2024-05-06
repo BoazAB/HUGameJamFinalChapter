@@ -219,11 +219,11 @@ MonoBehaviour:
   stop: {fileID: 1727126944}
   moveLeft: 276
   moveRight: 275
-  jumpKey: 256
+  jumpKey: 273
   borderRectTransform: {fileID: 948415465}
   borderLeft: {fileID: 1638917185}
   borderRight: {fileID: 1874775186}
-  moveSpeed: 200
+  moveSpeed: 400
   horizontalInput: 0
   animationScript: {fileID: 1727126945}
   image: {fileID: 53822934}
@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0a9a65e0f238e48a17208a5d81b04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireScript: {fileID: 1727126947}
   coal: {fileID: 4156048024037204879, guid: af634d770010e284e96fda664f99cbe3, type: 3}
   water: {fileID: 2923303904183429545, guid: 8441c8089aeea5e47b7892e31e3a9f06, type: 3}
   coalBox: {fileID: 336183230}
@@ -799,7 +800,7 @@ MonoBehaviour:
   borderRectTransform: {fileID: 948415465}
   borderLeft: {fileID: 1638917185}
   borderRight: {fileID: 1874775186}
-  moveSpeed: 200
+  moveSpeed: 400
   horizontalInput: 0
   animationScript: {fileID: 1727126946}
   image: {fileID: 323536089}
@@ -910,6 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0a9a65e0f238e48a17208a5d81b04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireScript: {fileID: 1727126943}
   coal: {fileID: 4156048024037204879, guid: af634d770010e284e96fda664f99cbe3, type: 3}
   water: {fileID: 2923303904183429545, guid: 8441c8089aeea5e47b7892e31e3a9f06, type: 3}
   coalBox: {fileID: 336183230}
@@ -2287,6 +2289,7 @@ GameObject:
   - component: {fileID: 1727126944}
   - component: {fileID: 1727126945}
   - component: {fileID: 1727126946}
+  - component: {fileID: 1727126947}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2446,6 +2449,24 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e6c48ab0ab6130245baa0b35addb0a0c, type: 3}
   - {fileID: 21300000, guid: 0a2a652f0671eea48babaaf15da8a081, type: 3}
   index: 0
+--- !u!114 &1727126947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727126940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c69da292de2e04684210d4a273d003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerClass: {fileID: 1748737798}
+  walker: {fileID: 1354742322}
+  time: 0
+  KaputTime: 30
+  DamageInterval: 0
+  Kaput: 0
 --- !u!1 &1748737791
 GameObject:
   m_ObjectHideFlags: 0

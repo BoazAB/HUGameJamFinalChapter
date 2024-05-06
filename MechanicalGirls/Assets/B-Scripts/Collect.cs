@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class Collect : MonoBehaviour
 {
+    public FireScript fireScript;
     KeyCode interact;
     bool holding;
 
@@ -66,7 +67,7 @@ public class Collect : MonoBehaviour
             holding = true;
         }
 
-        if (distanceMiddle <= 300 && Input.GetKeyDown(interact))
+        if (distanceMiddle <= 400 && Input.GetKeyDown(interact))
         {
             if (holding)
             {
@@ -78,6 +79,7 @@ public class Collect : MonoBehaviour
                         {
                             t.transform.position = new Vector3(950, 444);
                             t.SetParent(middle.transform);
+                            holding = false;
                             break;
                         }
                     }
@@ -90,6 +92,7 @@ public class Collect : MonoBehaviour
                         {
                             t.transform.position = new Vector3(950, 444);
                             t.SetParent(middle.transform);
+                            holding = false;
                             break;
                         }
                     }
@@ -139,6 +142,7 @@ public class Collect : MonoBehaviour
                         Destroy(t.gameObject);
                         holding = false;
                         print("fueled");
+                        fireScript.SuplyCoal(30);
                         break;
                     }
                 }
@@ -160,6 +164,7 @@ public class Collect : MonoBehaviour
                         Destroy(t.gameObject);
                         holding = false;
                         print("cooled");
+                        fireScript.SuplyCoal(30);
                         break;
                     }
                 }

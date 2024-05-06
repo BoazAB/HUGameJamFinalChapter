@@ -19,7 +19,7 @@ public class Walker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WalkingBaseclass walkers = (Input.GetKeyDown(KeyCode.A)? Walk1 : (Input.GetKeyDown(KeyCode.D)? Walk2 : null));
+        WalkingBaseclass walkers = (Input.GetKeyDown(KeyCode.Q)? Walk1 : (Input.GetKeyDown(KeyCode.P)? Walk2 : null));
         if (walkers != null && isWalking == false && Stunned == false)
         {
             if(walkers == Walk1){
