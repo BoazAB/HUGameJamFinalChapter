@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public BorderStop stop;
     [SerializeField] public KeyCode moveLeft;
     [SerializeField] public KeyCode moveRight;
     [SerializeField] public KeyCode jumpKey;
@@ -32,7 +33,7 @@ public class PlayerMove : MonoBehaviour
         {
             horizontalInput = 0f;
         }
-
+        stop.WaitPlease();
         // Calculate movement direction
         Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * moveSpeed * Time.deltaTime;
 

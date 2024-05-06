@@ -1,37 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BorderStop : PlayerMove
+public class BorderStop : MonoBehaviour
 {
-
-    [SerializeField] RectTransform Players, Player2, borderLeft, borderRight;
+    public PlayerMove Player1Move, Player2Move;
+    [SerializeField] RectTransform Player1, Player2, borderLeft, borderRight;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Players = GameObject.FindWithTag("Player").GetComponent<RectTransform>();
-        borderLeft = GameObject.Find("border").GetComponent<RectTransform>();
-        borderRight = GameObject.Find("border").GetComponent<RectTransform>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Players.position.x >= borderRight.position.x)
+    }
+    public void WaitPlease(){
+        if (Player1.position.x >= borderRight.position.x)
         {
-            horizontalInput = 0;
+            Player1Move.horizontalInput = 0;
         }
-        if (Players.position.x <= borderLeft.position.x)
+        if (Player1.position.x <= borderLeft.position.x)
         {
-            horizontalInput = 0;
+            Player1Move.horizontalInput = 0;
         }
         if (Player2.position.x >= borderRight.position.x)
         {
-            horizontalInput = 0;
+            Player2Move.horizontalInput = 0;
         }
         if (Player2.position.x <= borderLeft.position.x)
         {
-            horizontalInput = 0;
+            Player2Move.horizontalInput = 0;
         }
     }
 }
+
