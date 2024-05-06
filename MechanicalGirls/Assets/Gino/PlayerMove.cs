@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
+    
+    public float scalexLeft;
+    public float scalexRight;
     public BorderStop stop;
     [SerializeField] public KeyCode moveLeft;
     [SerializeField] public KeyCode moveRight;
@@ -66,6 +69,14 @@ public class PlayerMove : MonoBehaviour
     public IEnumerator<WaitForEndOfFrame> waitForend(){
         yield return new WaitForEndOfFrame();
         string animationtypename = (horizontalInput != 0 ? "Flying" : "Idle");
-        animationScript.nextFrame(image.sprite ,animationtypename);
+        if(animationtypename == "Flying"){
+            if(horizontalInput == 1){
+                transform.localScale = new Vector3(scalexRight, transform.localScale.y, transform.localScale.z);
+            }
+            else{
+            transform.localScale = new Vector3(scalexLeft, transform.localScale.y, transform.localScale.z);
+            }
+        }
+        animationScript.nextFrame(image ,animationtypename);
     }
 }
