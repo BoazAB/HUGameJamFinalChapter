@@ -38,4 +38,10 @@ public class FireScript : MonoBehaviour
             StartCoroutine(DamageWhileStunned());
         }
     }
+    public void SuplyCoal(float CoalSuply){
+        if (Kaput == true){
+            Kaput = false;
+        }
+        time -= CoalSuply;
+    }
 }
