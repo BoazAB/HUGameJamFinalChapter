@@ -183,7 +183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 088f69a4c92226441892e363917a69f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -222,6 +222,8 @@ MonoBehaviour:
   borderRight: {fileID: 1874775186}
   moveSpeed: 200
   horizontalInput: 0
+  animationScript: {fileID: 1727126945}
+  image: {fileID: 53822934}
 --- !u!61 &53822938
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -610,7 +612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 19e9d71e17ebde84ab9efc0a7bcdd04f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -649,6 +651,8 @@ MonoBehaviour:
   borderRight: {fileID: 1874775186}
   moveSpeed: 200
   horizontalInput: 0
+  animationScript: {fileID: 1727126945}
+  image: {fileID: 323536089}
 --- !u!61 &323536093
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1722,6 +1726,7 @@ GameObject:
   - component: {fileID: 1727126941}
   - component: {fileID: 1727126943}
   - component: {fileID: 1727126944}
+  - component: {fileID: 1727126945}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1793,6 +1798,47 @@ MonoBehaviour:
   Player2: {fileID: 53822933}
   borderLeft: {fileID: 1638917185}
   borderRight: {fileID: 1874775186}
+--- !u!114 &1727126945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727126940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e49d8570978bc046a175cebc106ad07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IdleAnimation:
+  - {fileID: 21300000, guid: 3d5d3d290eea49e47abf90dc3a85df89, type: 3}
+  - {fileID: 21300000, guid: cf518376f9d8033448cfa01fd3de065a, type: 3}
+  - {fileID: 21300000, guid: 98b82b46156e2374abb472761020090a, type: 3}
+  - {fileID: 21300000, guid: 818267bd832fda74c838a91250eeb3aa, type: 3}
+  - {fileID: 21300000, guid: 8865308eee2b31b4b8cb7ff68fc5ed98, type: 3}
+  - {fileID: 21300000, guid: 87f99a259e8bca64196547e3d5f26501, type: 3}
+  - {fileID: 21300000, guid: 3911d941c2036674f82a14770650af02, type: 3}
+  - {fileID: 21300000, guid: 8e539bb3c18cef6499db3951206dec3c, type: 3}
+  - {fileID: 21300000, guid: 98f82b792f55e454e92a6cea52ade9c6, type: 3}
+  - {fileID: 21300000, guid: a90ea57297cdb6f4e9ad5381f64bdd31, type: 3}
+  - {fileID: 21300000, guid: d2ceb940bcdd5c4429ac23a4d9994072, type: 3}
+  - {fileID: 21300000, guid: 03c45f8b9cd20d4469047b78644189ca, type: 3}
+  - {fileID: 21300000, guid: 1d5f0e09972023740a2c6feb1d7ffc1a, type: 3}
+  FlyingAnimation:
+  - {fileID: 21300000, guid: 088f69a4c92226441892e363917a69f7, type: 3}
+  - {fileID: 21300000, guid: 19e9d71e17ebde84ab9efc0a7bcdd04f, type: 3}
+  - {fileID: 21300000, guid: 22a30d31f82fefc43bffe31608490470, type: 3}
+  - {fileID: 21300000, guid: b9bde9f671ddf9a4784eb33d068bde6e, type: 3}
+  - {fileID: 21300000, guid: 699b172211d07da45b8a46938805d106, type: 3}
+  - {fileID: 21300000, guid: 8291e279d8912da44ad2d790010954ed, type: 3}
+  - {fileID: 21300000, guid: a7b5977920e4ba8459aaa30cf17315a8, type: 3}
+  - {fileID: 21300000, guid: 2daa29f525010c14fabfb26a6060245f, type: 3}
+  - {fileID: 21300000, guid: e9646b342c0a2e041b13f555119c703e, type: 3}
+  - {fileID: 21300000, guid: a3f2519eff2f5c14bab2ef30ceea97f1, type: 3}
+  - {fileID: 21300000, guid: 522d97ed390550543a4e60706ccb4b0a, type: 3}
+  - {fileID: 21300000, guid: 6c5a5d946af1f2748ba73a286cae570f, type: 3}
+  - {fileID: 21300000, guid: c1912be2677d1794c83fb7709bfbcfb0, type: 3}
+  index: 0
 --- !u!1 &1748737791
 GameObject:
   m_ObjectHideFlags: 0

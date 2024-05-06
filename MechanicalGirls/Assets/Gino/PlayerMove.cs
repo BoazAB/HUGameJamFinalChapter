@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -14,7 +17,8 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private float moveSpeed;
     [HideInInspector] public float horizontalInput = 0f;
-
+    public AnimationScript animationScript;
+    public UnityEngine.UI.Image image;
     void Update()
     {
         if (Input.GetKey(moveLeft))
@@ -27,7 +31,6 @@ public class PlayerMove : MonoBehaviour
         {
             horizontalInput = 1f;
             Debug.Log("RIght key pressed");
-
         }
         else
         {
@@ -45,6 +48,7 @@ public class PlayerMove : MonoBehaviour
         }
         // Move the player sprite
         gameObject.transform.Translate(movement);
+        StartCoroutine(waitForend());
     }
 
     private bool CheckBorderCollision(Vector3 movement)
@@ -58,5 +62,10 @@ public class PlayerMove : MonoBehaviour
             return true; // Collision detected
         }
         return false; // No collision
+    }
+    public IEnumerator<WaitForEndOfFrame> waitForend(){
+        yield return new WaitForEndOfFrame();
+        string animationtypename = (horizontalInput != 0 ? "Flying" : "Idle");
+        animationScript.nextFrame(image.sprite ,animationtypename);
     }
 }
