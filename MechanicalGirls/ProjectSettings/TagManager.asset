@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - p1
+  - p2
+  - coalCrate
+  - waterCrate
+  - furnace
+  - cooling
+  - coal
+  - water
   layers:
   - Default
   - TransparentFX
