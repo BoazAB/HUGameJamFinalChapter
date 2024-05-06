@@ -1,7 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    
+    public float scalexLeft;
+    public float scalexRight;
     public BorderStop stop;
     [SerializeField] public KeyCode moveLeft;
     [SerializeField] public KeyCode moveRight;
@@ -14,7 +18,8 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private float moveSpeed;
     [HideInInspector] public float horizontalInput = 0f;
-
+    public AnimationScript animationScript;
+    public UnityEngine.UI.Image image;
     void Update()
     {
         if (Input.GetKey(moveLeft))
@@ -25,7 +30,6 @@ public class PlayerMove : MonoBehaviour
         else if (Input.GetKey(moveRight))
         {
             horizontalInput = 1f;
-
         }
         else
         {
@@ -43,6 +47,7 @@ public class PlayerMove : MonoBehaviour
         }
         // Move the player sprite
         gameObject.transform.Translate(movement);
+        StartCoroutine(waitForend());
     }
 
     private bool CheckBorderCollision(Vector3 movement)
@@ -56,5 +61,18 @@ public class PlayerMove : MonoBehaviour
             return true; // Collision detected
         }
         return false; // No collision
+    }
+    public IEnumerator<WaitForEndOfFrame> waitForend(){
+        yield return new WaitForEndOfFrame();
+        string animationtypename = (horizontalInput != 0 ? "Flying" : "Idle");
+        if(animationtypename == "Flying"){
+            if(horizontalInput == 1){
+                transform.localScale = new Vector3(scalexRight, transform.localScale.y, transform.localScale.z);
+            }
+            else{
+            transform.localScale = new Vector3(scalexLeft, transform.localScale.y, transform.localScale.z);
+            }
+        }
+        animationScript.nextFrame(image ,animationtypename);
     }
 }

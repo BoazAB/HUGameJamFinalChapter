@@ -6,7 +6,8 @@ public class BorderStop : MonoBehaviour
 {
     public PlayerMove Player1Move, Player2Move;
     [SerializeField] RectTransform Player1, Player2, borderLeft, borderRight;
-
+    public float scalexLeft;
+    public float scalexRight;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class BorderStop : MonoBehaviour
         if (Player1.position.x >= borderRight.position.x && Player1Move.horizontalInput == 1)
         {
             Player1Move.horizontalInput = 0;
+            Player1.transform.position = new Vector3();
         }
         if (Player1.position.x <= borderLeft.position.x && Player1Move.horizontalInput == -1)
         {
