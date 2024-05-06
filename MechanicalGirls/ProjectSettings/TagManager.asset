@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Trigger
+  - Wall
+  - Obstacle
+  - counter
   - p1
   - p2
   - coalCrate
